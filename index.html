@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div class="console">
+
+        <div class="console-top">
+            <button class="top-back" onclick="backToMain()">← Back</button>
+        </div>
+
+        <div class="console-screen">
+
+            <!-- DEMO SCREEN -->
+            <div id="screen-demo" class="screen active">
+                <h2>Visual Logic</h2>
+                <p>
+                    Watch how the logic works
+                </p>
+
+                <div id="demo-grid" class="grid"></div>
+
+                <div id="demoQueue" class="command-queue"></div>
+
+                <div class="controls horizontal demo-controls">
+                    <button id="demoLeft" disabled>⬅️</button>
+                    <button id="demoUp" disabled>⬆️</button>
+                    <button id="demoDown" disabled>⬇️</button>
+                    <button id="demoRight" disabled>➡️</button>
+                </div>
+
+                <div class="action-row">
+                    <button id="demoRun">Run</button>
+                </div>
+
+                <button onclick="replayDemo()">▶ Replay Demo</button>
+                <button onclick="goTo('main')">Continue</button>
+            </div>
+
+            <!-- TUTORIAL SCREEN -->
+            <div id="screen-tutorial" class="screen">
+                <h2>Tutorial</h2>
+                <p>
+                    Learn step by step
+                </p>
+
+                <button onclick="startTutorial('easy')">Easy</button>
+
+                <button onclick="startTutorial('medium')">Medium</button>
+
+                <button onclick="startTutorial('hard')">Hard</button>
+
+                <button onclick="watchDemo()">Watch Demo</button>
+
+                <br><br>
+                <button class="secondary" onclick="goTo('main')">Back</button>
+            </div>
+
+            <!-- MAIN SCREEN -->
+            <div id="screen-main" class="screen">
+
+                <button onclick="goTo('tutorial')">Tutorial</button>
+
+                <div class="calendar-header">
+                    <button onclick="prevMonth()">◀</button>
+                    <span id="monthLabel"></span>
+                    <button onclick="nextMonth()">▶</button>
+                </div>
+
+                <div id="calendar" class="calendar"></div>
+
+                <h2>Daily Logic Challenge</h2>
+                <p>
+                    Select a date to play or replay
+                </p>
+            </div>
+
+            <!-- GAME SCREEN -->
+            <div id="screen-game" class="screen">
+                <h2 id="wordHint"></h2>
+
+                <div id="grid" class="grid"></div>
+
+                <div id="commandQueue" class="command-queue"></div>
+
+                <div class="controls horizontal">
+                    <button onclick="addCommand('left')">⬅️</button>
+                    <button onclick="addCommand('up')">⬆️</button>
+                    <button onclick="addCommand('down')">⬇️</button>
+                    <button onclick="addCommand('right')">➡️</button>
+                </div>
+
+                <div class="action-row">
+                    <button onclick="runCommands()">Run</button>
+                    <button class="secondary" onclick="clearQueue()">Clear</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

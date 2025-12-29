@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef5f3;
+}
+
+body.game-active .top-back {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* CONSOLE */
+.console {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    height: calc(100vh - 20px);
+    margin: 10px auto;
+    background: #dff1ec;
+    border-radius: 30px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.console-top {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.top-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 6px 10px;
+    font-size: 14px;
+    background: none;
+    color: #333;
+    display: none;
+}
+
+.console-screen {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 12px;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* CALENDAR */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.calendar div {
+    height: 32px;
+    border-radius: 8px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.calendar .done {
+    background: #b3e5fc;
+}
+
+.calendar .locked {
+    background: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* SCREENS */
+.screen {
+    display: none;
+    text-align: center;
+}
+.screen.active {
+    display: block;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 16px;
+    margin: 6px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: none;
+    background-color: #64b5f6;
+    color: #222;
+}
+
+button.secondary {
+    background-color: #cfd8dc;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+    margin: 12px auto;
+}
+
+.cell {
+    width: 56px;
+    height: 56px;
+    background: #2f2f2f;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+/* Letter tiles */
+.cell span {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+/* CONTROLS */
+.controls button {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: #90caf9;
+    box-shadow: 0 4px 0 #64b5f6;
+}
+
+.controls button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #64b5f6;
+}
+
+.controls.horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* QUEUE */
+.command-queue {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 10px 0;
+    min-height: 44px;
+}
+
+.command-queue div {
+    width: 36px;
+    height: 36px;
+    background: #bbdefb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.command-queue .empty {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 2px dashed #cfd8dc;
+    opacity: 0.6;
+}
+
+/* DEMO */
+.demo-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.demo-active {
+    transform: translateY(10px);
+    box-shadow: 0 2px 0 #64b5f6;
+    background-color: #7fbff8;
+}
+
+/* ===== GRID SIZE ADJUSTMENT ===== */
+
+/* 5x5 grid: slightly smaller to fit screen */
+.grid-5 .cell {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+}
+
+.grid-5 .cell span {
+    font-size: 36px;
+}
+
+/* Also shrink control buttons slightly for 5x5 */
+.grid-5 ~ .controls button {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+}

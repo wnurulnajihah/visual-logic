@@ -1,0 +1,21 @@
+{
+  "name": "Visual Logic",
+  "short_name": "VisualLogic",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef5f3",
+  "theme_color": "#64b5f6",
+  "icons": [
+    {
+      "src": "icon_192px.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
