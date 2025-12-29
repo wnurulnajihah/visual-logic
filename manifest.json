@@ -1,6 +1,6 @@
 {
   "name": "Visual Logic",
-  "short_name": "VisualLogic",
+  "short_name": "Visual Logic",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
